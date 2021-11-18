@@ -1,5 +1,9 @@
-variable "name_prefix" {}
-variable "gcp_project" {}
+variable "name_prefix" {
+  default = "galoy-pura-vida"
+}
+variable "gcp_project" {
+  default = "galoy-pura-vida"
+}
 variable "enable_services" {
   default = true
 }
