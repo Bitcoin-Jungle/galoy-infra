@@ -1,11 +1,17 @@
-variable "name_prefix" {}
-variable "gcp_project" {}
-variable "node_service_account" {}
+variable "name_prefix" {
+  default = "galoy-pura-vida"
+}
+variable "gcp_project" {
+  default = "galoy-pura-vida"
+}
+variable "node_service_account" {
+  default = "galoy-pura-vida-cluster@galoy-pura-vida.iam.gserviceaccount.com"
+}
 variable "node_default_machine_type" {
   default = "e2-medium"
 }
 variable "letsencrypt_issuer_email" {
-  default = "bot@galoy.io"
+  default = "leesalminen@gmail.com"
 }
 
 module "platform" {

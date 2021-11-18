@@ -1,5 +1,12 @@
-variable "name_prefix" {}
-variable "gcp_project" {}
+variable "name_prefix" {
+  default = "galoy-pura-vida"
+}
+variable "gcp_project" {
+  default = "galoy-pura-vida"
+}
+variable "node_service_account" {
+  default = "galoy-pura-vida-cluster@galoy-pura-vida.iam.gserviceaccount.com"
+}
 variable "region" {
   default = "us-east1"
 }
@@ -10,9 +17,8 @@ variable "kube_version" {
   default = "1.21.5-gke.1302"
 }
 variable "node_default_machine_type" {
-  default = "n2-standard-4"
+  default = "e2-standard-4"
 }
-variable "node_service_account" {}
 variable "min_default_node_count" {
   default = 1
 }
