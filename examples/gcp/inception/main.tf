@@ -1,9 +1,15 @@
-variable "name_prefix" {}
-variable "tf_state_bucket_name" {}
+variable "name_prefix" {
+  default = "galoy-pura-vida"
+}
+variable "tf_state_bucket_name" {
+  default = "galoy-pura-vida-tf-state"
+}
 variable "buckets_location" {
   default = "US-EAST1"
 }
-variable "gcp_project" {}
+variable "gcp_project" {
+  default = "galoy-pura-vida"
+}
 variable "inception_sa" {}
 variable "users" {
   type = list(object({
@@ -12,6 +18,15 @@ variable "users" {
     platform  = bool
     logs      = bool
   }))
+
+  default = [
+    {
+      id        = "user:leesalminen@gmail.com"
+      inception = true
+      platform  = true
+      logs      = true
+    }
+  ]
 }
 
 module "inception" {
